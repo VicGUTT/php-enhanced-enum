@@ -1,0 +1,59 @@
+{
+    "name": "vicgutt/php-enhanced-enum",
+    "description": "Enhances PHP's native enums with convenient methods",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "PHP",
+        "enum"
+    ],
+    "homepage": "https://github.com/vicgutt/php-enhanced-enum",
+    "authors": [
+        {
+            "name": "Victor GUTT",
+            "email": "guttvictor@yahoo.fr",
+            "homepage": "https://victorgutt.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "pestphp/pest": "^1.21",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "VicGutt\\PhpEnhancedEnum\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "VicGutt\\PhpEnhancedEnum\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse --memory-limit=1G",
+        "lint": "composer analyse",
+        "test": "vendor/bin/pest",
+        "test:coverage": "vendor/bin/pest --coverage --min=90",
+        "test:[filtered]": "vendor/bin/pest --filter=ExampleTest",
+        "format": "vendor/bin/pint --test",
+        "format:fix": "vendor/bin/pint",
+        "fix": "composer format:fix"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
